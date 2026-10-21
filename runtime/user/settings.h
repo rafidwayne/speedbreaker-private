@@ -51,6 +51,7 @@ namespace settings
         DisplayGamma,  // the 360's display gamma ramp (video/display_gamma.h)
         Sharpening,
         Anisotropy,
+        ShadowDistance,  // the shadow maps' far distance, a multiple of the game's (game/shadow_distance.cpp)
         Mipmaps,
         InternalResolution,
         WindowWidth,   // hidden: the window's size, remembered between runs

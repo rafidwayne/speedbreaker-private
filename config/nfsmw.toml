@@ -254,3 +254,21 @@ registers = ["f10"]
 name = "WorldSteps"
 address = 0x823A2424
 registers = ["r30"]
+
+# Shadow Distance (runtime/game/shadow_distance.cpp): the shadow frustum's far
+# distance, the float at 0x828FCC74, scaled where the shadow code reads it
+# (sub_82456030 twice, sub_82455238 once), right after each `lfs`.
+[[midasm_hook]]
+name = "ShadowDistanceA"
+address = 0x824561F8
+registers = ["f12"]
+
+[[midasm_hook]]
+name = "ShadowDistanceB"
+address = 0x8245635C
+registers = ["f12"]
+
+[[midasm_hook]]
+name = "ShadowDistanceC"
+address = 0x82455378
+registers = ["f0"]

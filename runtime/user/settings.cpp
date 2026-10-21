@@ -194,6 +194,10 @@ namespace settings
                   ? "Extra sharpness for bicubic and FSR 1 upscaling (for FSR 1, the share of its sharpening pass's full strength). 0 turns it off."
                   : "Extra sharpness for bicubic upscaling. 0 turns it off.",
               .env = "NFSMW_SHARPEN", .defaultValue = 0.3, .min = 0, .max = 1, .step = 0.05 },
+            { .id = Id::ShadowDistance, .category = Category::Graphics, .type = Type::Float, .apply = Apply::Live,
+              .table = "video", .key = "shadow_distance", .label = "Shadow Distance",
+              .description = "How far from the camera the car, building and world shadows reach, as a multiple of the game's own (1 is the original). Farther shadows are drawn with the same shadow-map resolution, so they get softer.",
+              .env = "NFSMW_SHADOW_DISTANCE", .defaultValue = 1.0, .min = 1.0, .max = 4.0, .step = 0.25 },
             { .id = Id::Anisotropy, .category = Category::Graphics, .type = Type::Enum, .apply = Apply::Live,
               .table = "video", .key = "anisotropic_filtering", .label = "Anisotropic Filtering",
               .description = "Keeps roads and walls sharp at a distance. Auto: 16x on a dedicated GPU or an M-series iPad, 4x on other integrated ones.",
